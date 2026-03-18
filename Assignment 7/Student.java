@@ -5,9 +5,9 @@ String studentName;
 int marks;
 
 Student(int id, String name, int mark){
-studnetId=id;
-studentName=name;
-marks=mark;
+this.studentId=id;
+this.studentName=name;
+this.marks=mark;
 }
 void calculateGrade(){
 if(marks>=90){

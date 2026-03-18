@@ -1,25 +1,37 @@
 import java.util.*;
-public class BankAccount {
-int accountNumber;
-String accountHolderName;
-double balance;
-BankAccount(int accountNumber, String accountHolderName, double balance) {
-accountNumber = accountNumber;
-accountHolderName = accountHolderName;
-balance = balance;
-}
-void deposit(double amount) {
-balance += amount;
-System.out.println("Deposited: " + amount);
-}
-void displayBalance() {
-System.out.println("Account Number: " + accountNumber);
-System.out.println("Account Holder: " + accountHolderName);
-System.out.println("Current Balance: " + balance);
-}
-public static void main(String[] args) {
-BankAccount account = new BankAccount(101, "San", 10000);
-account.deposit(500);
-account.displayBalance();
-}
+class BankAccount {
+    int accountNumber;
+    String accountHolderName;
+    int balance;
+
+    void deposit(int deposit) {
+        balance = balance + deposit;
+        System.out.println("Deposited: " + deposit);
+        System.out.println("Updated balance: " + balance);
+    }
+
+    void withdraw(int withdraw) {
+        if (withdraw <= balance) {
+            balance = balance - withdraw;
+            System.out.println("Withdrawn: " + withdraw);
+            System.out.println("Updated balance: " + balance);
+        } else {
+            System.out.println("Insufficient Balance!");
+        }
+    }
+
+    void displayBalance() {
+        System.out.println("Current balance: " + balance);
+    }
+
+    public static void main(String[] args) {
+        BankAccount b = new BankAccount();
+        b.accountNumber = 1111;
+        b.accountHolderName = "SAN";
+        b.balance = 100;
+
+        b.deposit(20000);
+        b.withdraw(500);
+        b.displayBalance();
+    }
 }
