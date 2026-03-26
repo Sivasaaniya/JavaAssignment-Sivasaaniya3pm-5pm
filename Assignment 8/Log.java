@@ -15,7 +15,7 @@ public class Log{
 public static void main(String [] args){
 LoginSystem l= new LoginSystem();
 l.login("san","admin123");
-l.login("ffldj@gmail.com",true);
+l.login("ffldj@gmail.com",trues);
 l.login(99485094,978);
 }
 }
