@@ -17,7 +17,7 @@ public class Task2 {
 				count++;
 			}
 			else {
-				output+=String.valueOf(count);
+			output+=String.valueOf(count);
 				output+=s.charAt(i);
 				count=1;
 }
