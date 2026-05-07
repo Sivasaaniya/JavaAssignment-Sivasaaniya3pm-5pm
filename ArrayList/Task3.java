@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Task3 {
+public class Task4 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -16,14 +16,22 @@ public class Task3 {
         	 int m=sc.nextInt();
         	 list.add(m);
         }
-        System.out.println("Enter the k : ");
-        int k=sc.nextInt();
         
-        for(int i=0;i<k;i++) {
-        	int last=list.removeLast();
-        	list.add(0,last);
+        int first=list.get(0);
+        int sec=list.get(1);
+        for(int i=1;i<list.size();i++) {
+        	if(list.get(i) < first) {
+        		sec=first;
+        		first=list.get(i);
+        	}
+        	else if(list.get(i) < sec) {
+        		sec=list.get(i);
+        	}
         }
-        System.out.println(list);
+        if(first > sec) {
+        	sec = first;
+        }
+        System.out.println(sec);
 	}
 
 }
